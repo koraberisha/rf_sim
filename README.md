@@ -63,7 +63,10 @@ This project simulates RF signal propagation from access points in an outdoor en
 
 4. Compile the Visualizer:
    ```bash
-   g++ -std=c++11 rf_visualizer.cpp -o rf_visualizer $(pkg-config --cflags --libs sfml-all)
+   g++ -std=c++11 rf_visualizer.cpp -o rf_visualizer \
+                      -I$(brew --prefix sfml)/include \
+                      -L$(brew --prefix sfml)/lib \
+                      -lsfml-graphics -lsfml-window -lsfml-system
    ```
 
 5. Run the Visualizer:
